@@ -1,0 +1,390 @@
+{%load bootstrap4%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Life hacks</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+    rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/ionicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/lightbox.min.css' %}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: BizPage
+    Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="#intro" class="scrollto">Life Hacks</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#intro">Home</a></li>
+          <li><a href="#portfolio">Hacks</a></li>
+          <li><a href="#footer">Contact</a></li>
+          <li class="menu-has-children"><a href="">{{user.username}} Account</a>
+            <ul>
+              <li><a href="{%url 'new-image'%}">Post hack</a></li>
+              <li><a href="{%url 'new-profile'%}">Add Profile</a></li>
+              <li><a href="{%url 'displayprofile' user.id %}">View Profile</a></li>
+              <li><a href="/accounts/password/change">Change Password</a></li>
+              <li><a href="/logout">Log out</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active">
+            <div class="carousel-background"><img src="../../static/images/chip.jpg" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Light a fire</h2>
+                <p>Chips are not just a tasty snack. Fat, oil, and the chemicals in potato (or other) chips make them a
+                  perfect fire-starting material.</p>
+                <a href="{%url 'new-image'%}" class="btn-get-started scrollto">Post hack</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img src="../../static/images/find.jpg" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Find lost items</h2>
+                <p>Use your vacuum cleaner to find tiny items you’ve lost, such as earrings. Just cover the end of a
+                  vacuum cleaner with a stocking or pantyhose, and start your search.</p>
+                <a href="{%url 'new-image'%}" class="btn-get-started scrollto">Post hack</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img src="../../static/images/citrus.jpg" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Make simple air freshener</h2>
+                <p>Do you want your house to smell good for hours? Make an orange or a lemon candle, and its light and
+                  aroma will last a long time</p>
+                <a href="{%url 'new-image'%}" class="btn-get-started scrollto">Post hack</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="carousel-background"><img src="../../static/images/lid.jpg" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>Open Stuck Jar</h2>
+                <p>Try running hot water over the lid for a minute or two, wipe down, and then open. You can also soak
+                  the lid in hot water to get a similar effect.</p>
+                <a href="{%url 'new-image'%}" class="btn-get-started scrollto">Post hack</a>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- #intro -->
+
+  <main id="main">
+
+
+
+    <!--==========================
+      Portfolio Section
+    ============================-->
+    <section id="portfolio" class="section-bg">
+      <div class="container">
+
+        <header class="section-header">
+          <h3 class="section-title">HACKS POSTED</h3>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-school">School</li>
+              <li data-filter=".filter-cooking">Cooking</li>
+              <li data-filter=".filter-travel">Travel</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+          {%if school %}
+          {% for school in school %}
+          {% if user.is_authenticated %}
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-school wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{{school.image.url}}" alt="" height="100%;" width="100%">
+                <a href="{{school.image.url}}" data-lightbox="portfolio" data-title="School 1" class="link-preview"
+                  title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="/photo/{{school.id}}" class="link-details" title="More Details"><i
+                    class="ion ion-android-open"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#">Category: {{school.hack_category}}</a></h4>
+                <p>Caption:{{school.hack_caption}}</p>
+                <p>Likes: {{school.likes.count}}</p>
+                <a href="{% url 'delete' school.id %}">Delete</a>
+
+              </div>
+
+              <form action="{% url 'like_a_post' %}" method="post">
+                {% csrf_token %}
+                <button class="like" type="submit" name="post_id" value="{{school.id}}"><img width="45px" height="30px"
+                    src="https://cdn1.iconfinder.com/data/icons/party-flat-2/512/birthday_party_happy_red__heart_-512.png">Like
+                </button>
+              </form>
+
+            </div>
+          </div>
+          {%endif%}
+          {%endfor%}
+          {%endif%}
+
+          {%if travel %}
+          {% for travel in travel %}
+          {% if user.is_authenticated %}
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-travel wow fadeInUp" data-wow-delay="0.1s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{{travel.image.url}}" alt="" height="100%;" width="100%">
+                <a href="{{travel.image.url}}" class="link-preview" data-lightbox="portfolio" data-title="Web 3"
+                  title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="/photo/{{travel.id}}" class="link-details" title="More Details"><i
+                    class="ion ion-android-open"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#">Category: {{travel.hack_category}}</a></h4>
+                <p>Caption:{{travel.hack_caption}}</p>
+                <p>Likes: {{travel.likes.count}}</p>
+                <a href="{% url 'delete' travel.id %}">Delete</a>
+
+              </div>
+
+              <form action="{% url 'like_a_post' %}" method="post">
+                {% csrf_token %}
+                <button class="like" type="submit" name="post_id" value="{{travel.id}}"><img width="45px" height="30px"
+                    src="https://cdn1.iconfinder.com/data/icons/party-flat-2/512/birthday_party_happy_red__heart_-512.png">Like
+                </button>
+              </form>
+
+            </div>
+          </div>
+          {%endif%}
+          {%endfor%}
+          {%endif%}
+
+          {%if cooking %}
+          {% for cooking in cooking %}
+          {% if user.is_authenticated %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-cooking wow fadeInUp" data-wow-delay="0.2s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="{{cooking.image.url}}" alt="" height="100%;" width="100%">
+                <a href="{{cooking.image.url}}" class="link-preview" data-lightbox="portfolio" data-title="App 2"
+                  title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="/photo/{{cooking.id}}" class="link-details" title="More Details"><i
+                    class="ion ion-android-open"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#">Category: {{cooking.hack_category}}</a></h4>
+                <p>Caption:{{cooking.hack_caption}}</p>
+                <p>Likes: {{cooking.likes.count}}</p>
+                <a href="{% url 'delete' cooking.id %}">Delete</a>
+
+              </div>
+
+              <form action="{% url 'like_a_post' %}" method="post">
+                {% csrf_token %}
+                <button class="like" type="submit" name="post_id" value="{{cooking.id}}"><img width="45px" height="30px"
+                    src="https://cdn1.iconfinder.com/data/icons/party-flat-2/512/birthday_party_happy_red__heart_-512.png">Like
+                </button>
+              </form>
+
+            </div>
+          </div>
+          {%endif%}
+          {%endfor%}
+          {%endif%}
+
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>LifeHacks</h3>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies
+              darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo.
+              Amet volutpat consequat mauris nunc congue.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">About us</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Services</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="ion-ios-arrow-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              Ngong Lane <br>
+              Plaza,<br>
+              Kenya <br>
+              <strong>Phone:</strong> +254 333 444<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+
+
+          <div class="col-lg-3 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem na caramase seza.</p>
+            <form action="{%url 'welcome' %}" method="POST">
+              {%csrf_token%}
+              {% bootstrap_form letterForm layout='inline' %}
+              <input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>LifeHacks</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
+        -->
+
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <div id="preloader"></div>
+
+  <!-- JavaScript Libraries -->
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/easing.min.js' %}"></script>
+  <script src="{% static 'js/hoverIntent.js' %}"></script>
+  <script src="{% static 'js/superfish.min.js' %}"></script>
+  <script src="{% static 'js/wow.min.js' %}"></script>
+  <script src="{% static 'js/waypoints.min.js' %}"></script>
+  <script src="{% static 'js/counterup.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'js/lightbox.min.js' %}"></script>
+  <script src="{% static 'js/jquery.touchSwipe.min.js' %}"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="{% static 'js/contactform.js' %}"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
