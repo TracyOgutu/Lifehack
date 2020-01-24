@@ -27,6 +27,8 @@ EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+GOOGLE_CLIENT_ID=config('GOOGLE_CLIENT_ID')
+GOOGLE_CLIENT_SECRET=config('GOOGLE_CLIENT_SECRET')
 
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
@@ -74,6 +76,11 @@ else:
 # Application definition
 
 INSTALLED_APPS = [
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.google',
+    # 'django.contrib.sites',
     'bootstrap4',
     'hacks.apps.HacksConfig',
     'django.contrib.admin',
@@ -85,6 +92,7 @@ INSTALLED_APPS = [
     'tinymce',
 ]
 
+# SITE_ID=1
 
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -96,15 +104,18 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+# AUTHENTICATION_BACKENDS = (
+#     'django.contrib.auth.backends.ModelBackend',
+#     'allauth.account.auth_backends.AuthenticationBackend',
+# )
 ROOT_URLCONF = 'diy.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.normpath(os.path.join(BASE_DIR, 'templates')),
-        ],
+        # 'DIRS': [
+        #     os.path.normpath(os.path.join(BASE_DIR, 'templates')),
+        # ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -156,6 +167,15 @@ USE_L10N = True
 
 USE_TZ = True
 
+# SOCIALACCOUNT_PROVIDERS = {
+#     'google': {
+#         'APP': {
+#             'client_id': '257895107420-vs0o8n79d1usalf8vp7h9a4bmmeerbus.apps.googleusercontent.com',
+#             'secret': 'EOw4x8fXwPnolFgnclvp7z9j',
+#             'key': ''
+#         }
+#     }
+# }
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/

@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
-from django.contrib.auth import logout
+
 # Create your views here.
 @login_required(login_url='/accounts/login/')
 def welcome(request):
@@ -58,7 +58,7 @@ def search_category(request):
         message="You haven't searched for any term"
         return render(request,'search.html',{"message":message})
 
-@login_required(login_url='/accounts/login/')
+@login_required()
 def single_hack(request,hack_id):
     '''
     This method displays a single hack and its details such as comments, date posted and caption
